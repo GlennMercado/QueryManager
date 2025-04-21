@@ -1,0 +1,57 @@
+[18/Nov/2024 00:55:04] "GET /QueryManager HTTP/1.1" 301 0
+[18/Nov/2024 00:55:04] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 00:55:04] "GET /QueryManager/static/bootstrap.min.css HTTP/1.1" 200 160302
+[18/Nov/2024 00:55:04] "GET /QueryManager/static/custom.css HTTP/1.1" 200 1925
+[18/Nov/2024 00:55:04] "GET /QueryManager/static/query_manager.png HTTP/1.1" 200 64648
+[18/Nov/2024 00:55:04] "GET /QueryManager/static/profile_pics/default2.jpg HTTP/1.1" 200 10687
+[18/Nov/2024 00:55:04] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 200 9789
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 18, 2024 - 00:55:04
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:29602/
+Quit the server with CTRL-BREAK.
+
+[18/Nov/2024 00:59:39] "GET /QueryManager/ HTTP/1.1" 200 12882
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 18, 2024 - 00:59:34
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:29602/
+Quit the server with CTRL-BREAK.
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\QueryManager\manage.py", line 22, in <module>
+    main()
+    ~~~~^^
+  File "C:\inetpub\wwwroot\QueryManager\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\site-packages\django\core\management\__init__.py", line 382, in execute
+    settings.INSTALLED_APPS
+  File "C:\Python313\Lib\site-packages\django\conf\__init__.py", line 102, in __getattr__
+    self._setup(name)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\site-packages\django\conf\__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\django\conf\__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "C:\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\wwwroot\QueryManager\core\settings.py", line 23, in <module>
+    with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
+              ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?

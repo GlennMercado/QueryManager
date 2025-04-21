@@ -1,0 +1,61 @@
+[18/Nov/2024 01:28:28] "GET /QueryManager/ HTTP/1.1" 200 12882
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 18, 2024 - 01:28:27
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:3378/
+Quit the server with CTRL-BREAK.
+
+[18/Nov/2024 01:28:46] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:28:47] "GET /QueryManager/ HTTP/1.1" 200 12882
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 18, 2024 - 01:28:46
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:3378/
+Quit the server with CTRL-BREAK.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 18, 2024 - 01:28:54
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:3378/
+Quit the server with CTRL-BREAK.
+
+[18/Nov/2024 01:28:57] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:28:58] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:28:59] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:28:59] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:28:59] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:28:59] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:28:59] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:28:59] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:29:00] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:29:02] "GET /QueryManager/accounts/login HTTP/1.1" 301 0
+[18/Nov/2024 01:29:02] "GET /QueryManager/accounts/login/ HTTP/1.1" 200 4879
+[18/Nov/2024 01:29:03] "GET /QueryManager/static/fa4/css/font-awesome.min.css HTTP/1.1" 200 31000
+[18/Nov/2024 01:29:03] "GET /QueryManager/static/animate.min.css HTTP/1.1" 200 71750
+[18/Nov/2024 01:29:03] "GET /QueryManager/static/bootstrap.min.js HTTP/1.1" 200 51039
+[18/Nov/2024 01:29:03] "GET /QueryManager/static/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+[18/Nov/2024 01:29:05] "GET /QueryManager/ HTTP/1.1" 200 12882
+[18/Nov/2024 01:29:06] "GET /QueryManager/accounts/register HTTP/1.1" 301 0
+[18/Nov/2024 01:29:07] "GET /QueryManager/accounts/register/ HTTP/1.1" 200 5372
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 18, 2024 - 01:28:56
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:3378/
+Quit the server with CTRL-BREAK.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 18, 2024 - 01:29:12
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:3378/
+Quit the server with CTRL-BREAK.
+

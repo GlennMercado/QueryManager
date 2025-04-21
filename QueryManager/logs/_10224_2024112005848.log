@@ -1,0 +1,15 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 19, 2024 - 19:58:50
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:11564/
+Quit the server with CTRL-BREAK.
+
+[19/Nov/2024 19:58:50] "GET /QueryManager/ HTTP/1.1" 200 12882
+[19/Nov/2024 19:58:50] "GET /QueryManager/static/bootstrap.min.css HTTP/1.1" 304 0
+[19/Nov/2024 19:58:50] "GET /QueryManager/static/custom.css HTTP/1.1" 304 0
+[19/Nov/2024 19:58:50] "GET /QueryManager/static/query_manager.png HTTP/1.1" 304 0
+[19/Nov/2024 19:58:50] "GET /QueryManager/static/profile_pics/default2.jpg HTTP/1.1" 304 0
+[19/Nov/2024 21:02:44] "GET /QueryManager/ HTTP/1.1" 200 12882
+[19/Nov/2024 21:02:45] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 304 0

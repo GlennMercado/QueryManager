@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Query{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="custom-card">
+            <h5 class="card-header">Query</h5>
+        </div>
+        <div class="card-body">
+            {% for msg in messages %}
+            <div class="alert alert-success">
+                {{ msg }}
+            </div>
+            {% endfor %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_issue">Issue:</label>
+                    <input type="text" class="form-control" id="id_issue" name="issue" value="{{ form.issue.value|default_if_none:'' }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_detail">Detail:</label>
+                    <textarea class="form-control" id="id_detail" name="detail" rows="4">{{ form.detail.value|default_if_none:'' }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="id_referenceform">Reference Form:</label>
+                    <input type="text" class="form-control" id="id_referenceform" name="referenceform" value="{{ form.referenceform.value|default_if_none:'' }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_tags">Tags:
+                        <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" title="This will be served as keyword" data-html="true" data-template='<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner bg-info"></div></div>'></i>
+                    </label>
+                    <input type="text" class="form-control" id="id_tags" name="tags" value="{{ form.tags.value }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_attachment">Attachment:</label>
+                    <input type="file" class="form-control-file" id="id_attachment" name="attachment">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip(); 
+    });
+
+    setTimeout(function() {
+        $(".alert-success").fadeOut("slow", function() {
+            $(this).remove();
+        });
+    }, 3000); 
+</script>
+{% endblock %}

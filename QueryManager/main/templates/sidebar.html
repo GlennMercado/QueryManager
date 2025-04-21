@@ -1,0 +1,42 @@
+{% load static %}
+<div class="card col-2 pt-5 mt-5 position-fixed" style="top: 0; left: 0; height: 100vh;">
+    <div class="card-header mt-2" data-toggle="collapse" href="#expand">
+      <div class="d-flex justify-content-between align-items-center">
+        <a class="text-reset">Filter <i class="fas fa-filter" style="font-size: 10px;"></i></a>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+    <div id="expand" class="card-collapse show">
+      <div class="d-flex flex-column mb-3">
+        <div class="p-2">
+          <a class="btn col-12 bg-info text-light text-left" href="/QueryManager/tags"><i class="fas fa-tag"></i>
+            Tags</a>
+        </div>
+        <!-- Changes 18/2/25 -->
+        <form method="get" id="filterForm">
+          <div class="p-2">
+            <label for="status"><i class="fa-solid fa-list-check"></i> Status</label>
+            <select name="status" class="form-control form-control-sm" onchange="document.getElementById('filterForm').submit()">
+              <option value="all" {% if request.GET.status == "all" %}selected{% endif %}>All</option>
+              <option value="resolved" {% if request.GET.status == "resolved" %}selected{% endif %}>Resolved</option>
+              <option value="unresolved" {% if request.GET.status == "unresolved" %}selected{% endif %}>Unresolved</option>
+            </select>
+          </div>       
+          <div class="p-2">
+            <label for="category"><i class="fa-solid fa-table-cells-large"></i> Category</label>
+            <select name="category" class="form-control form-control-sm" onchange="document.getElementById('filterForm').submit()">
+              <option value="all" {% if request.GET.category == "all" %}selected{% endif %}>All</option>
+              <option value="HotDocs" {% if request.GET.category == "HotDocs" %}selected{% endif %}>HotDocs</option>
+              <option value="Document Drafter" {% if request.GET.category == "Document Drafter" %}selected{% endif %}>Document Drafter</option>
+              <!-- Major Works 16/4/25 -->
+              <option value="Formatting" {% if request.GET.category == "Formatting" %}selected{% endif %}>Formatting</option>
+              <option value="Editing" {% if request.GET.category == "Editing" %}selected{% endif %}>Editing</option>
+              <option value="Conversion" {% if request.GET.category == "Conversion" %}selected{% endif %}>Conversion</option>
+              <!-- Major works -->
+            </select>
+          </div>
+        </form>
+        <!-- Changes end -->
+      </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+[15/Nov/2024 07:54:11] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 07:54:11] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 404 179
+[15/Nov/2024 07:54:18] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 07:54:18] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 404 179
+[15/Nov/2024 07:54:19] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 07:54:19] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 404 179
+[15/Nov/2024 07:54:33] "GET /QueryManager/accounts/login/ HTTP/1.1" 200 4914
+[15/Nov/2024 07:54:42] "POST /QueryManager/accounts/login/ HTTP/1.1" 200 5322
+[15/Nov/2024 07:54:51] "POST /QueryManager/accounts/login/ HTTP/1.1" 200 5322
+[15/Nov/2024 07:54:59] "GET /QueryManager/accounts/register/ HTTP/1.1" 200 5407
+[15/Nov/2024 07:55:06] "GET /QueryManager/admin HTTP/1.1" 404 179
+[15/Nov/2024 07:55:11] "GET /QueryManager/admin HTTP/1.1" 404 179
+[15/Nov/2024 07:55:17] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 07:55:17] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 404 179
+[15/Nov/2024 07:55:21] "GET /QueryManager/admin HTTP/1.1" 404 179
+[15/Nov/2024 07:56:16] "GET /QueryManager/admin/ HTTP/1.1" 404 179
+[15/Nov/2024 07:56:27] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 07:56:27] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 404 179
+[15/Nov/2024 07:56:48] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 07:56:48] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 404 179
+[15/Nov/2024 07:56:51] "GET /QueryManager/admin HTTP/1.1" 404 179
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 15, 2024 - 07:54:11
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:18947/
+Quit the server with CTRL-BREAK.
+
+[15/Nov/2024 07:57:16] "GET /QueryManager/admin HTTP/1.1" 301 0
+[15/Nov/2024 07:57:16] "GET /QueryManager/admin/ HTTP/1.1" 302 0
+[15/Nov/2024 07:57:17] "GET /QueryManager/admin/login/?next=/QueryManager/admin/ HTTP/1.1" 200 4359
+[15/Nov/2024 07:57:17] "GET /QueryManager/staticfiles/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:17] "GET /QueryManager/staticfiles/admin/css/login.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:17] "GET /QueryManager/staticfiles/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[15/Nov/2024 07:57:17] "GET /QueryManager/staticfiles/admin/css/base.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:17] "GET /QueryManager/staticfiles/admin/js/theme.js HTTP/1.1" 404 179
+[15/Nov/2024 07:57:17] "GET /QueryManager/staticfiles/admin/css/dark_mode.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:17] "GET /QueryManager/staticfiles/admin/css/responsive.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:29] "GET /QueryManager/admin/login/?next=/QueryManager/accounts HTTP/1.1" 200 4363
+[15/Nov/2024 07:57:29] "GET /QueryManager/staticfiles/admin/css/responsive.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:29] "GET /QueryManager/staticfiles/admin/css/base.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:29] "GET /QueryManager/staticfiles/admin/css/dark_mode.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:29] "GET /QueryManager/staticfiles/admin/js/theme.js HTTP/1.1" 404 179
+[15/Nov/2024 07:57:29] "GET /QueryManager/staticfiles/admin/css/login.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:29] "GET /QueryManager/staticfiles/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:29] "GET /QueryManager/staticfiles/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[15/Nov/2024 07:57:36] "GET /QueryManager/admin/login/?next=/QueryManager/admin HTTP/1.1" 200 4357
+[15/Nov/2024 07:57:37] "GET /QueryManager/staticfiles/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:37] "GET /QueryManager/staticfiles/admin/css/responsive.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:37] "GET /QueryManager/staticfiles/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[15/Nov/2024 07:57:37] "GET /QueryManager/staticfiles/admin/js/theme.js HTTP/1.1" 404 179
+[15/Nov/2024 07:57:37] "GET /QueryManager/staticfiles/admin/css/dark_mode.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:37] "GET /QueryManager/staticfiles/admin/css/login.css HTTP/1.1" 404 179
+[15/Nov/2024 07:57:37] "GET /QueryManager/staticfiles/admin/css/base.css HTTP/1.1" 404 179
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 15, 2024 - 07:57:14
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:18947/
+Quit the server with CTRL-BREAK.
+
+[15/Nov/2024 07:59:41] "GET /QueryManager/admin/login/?next=/QueryManager/admin HTTP/1.1" 200 4357
+[15/Nov/2024 07:59:42] "GET /QueryManager/staticfiles/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[15/Nov/2024 07:59:42] "GET /QueryManager/staticfiles/admin/css/base.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:42] "GET /QueryManager/staticfiles/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:42] "GET /QueryManager/staticfiles/admin/css/dark_mode.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:42] "GET /QueryManager/staticfiles/admin/js/theme.js HTTP/1.1" 404 179
+[15/Nov/2024 07:59:42] "GET /QueryManager/staticfiles/admin/css/responsive.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:42] "GET /QueryManager/staticfiles/admin/css/login.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:44] "GET /QueryManager/admin/login/?next=/QueryManager/admin HTTP/1.1" 200 4357
+[15/Nov/2024 07:59:44] "GET /QueryManager/staticfiles/admin/css/dark_mode.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:44] "GET /QueryManager/staticfiles/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:44] "GET /QueryManager/staticfiles/admin/css/base.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:44] "GET /QueryManager/staticfiles/admin/css/responsive.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:44] "GET /QueryManager/staticfiles/admin/css/login.css HTTP/1.1" 404 179
+[15/Nov/2024 07:59:44] "GET /QueryManager/staticfiles/admin/js/theme.js HTTP/1.1" 404 179
+[15/Nov/2024 07:59:44] "GET /QueryManager/staticfiles/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[15/Nov/2024 08:00:10] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 08:00:10] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 404 179
+[15/Nov/2024 08:00:13] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 08:00:13] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 404 179
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 15, 2024 - 07:59:41
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:18947/
+Quit the server with CTRL-BREAK.
+
+Watching for file changes with StatReloader
+[15/Nov/2024 08:00:32] "GET /QueryManager/ HTTP/1.1" 200 13065
+[15/Nov/2024 08:00:32] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 200 9789
+[15/Nov/2024 08:00:34] "GET /QueryManager/ HTTP/1.1" 200 13065

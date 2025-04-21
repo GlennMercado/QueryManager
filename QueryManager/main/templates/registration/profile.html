@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Edit Profile{% endblock %}
+{% block content %}
+<div class="container py-5 mt-5">
+    <!-- Profile Information -->
+    <div class="row mb-4 mt-4">
+        <div class="col-md-2 text-center">
+             {% if user.profile_picture %}
+                <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle mb-3 profile-picture-small">
+            {% else %}
+                <img src="{% static 'profile_pics/default2.jpg' %}" alt="Profile Picture" class="img-fluid rounded-circle mb-3 profile-picture-small">
+            {% endif %}
+        </div>
+        <div class="col-md-9">
+            <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+            <p>Email: {{ user.email }}</p>
+            <p>Region: {{ user.region }}</p>
+        </div>
+    </div>
+
+    <!-- Horizontal Navbar -->
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                aria-controls="pills-profile" aria-selected="true">Profile</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-questions-tab" data-toggle="pill" href="#pills-questions" role="tab"
+                aria-controls="pills-questions" aria-selected="false">Questions</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-answers-tab" data-toggle="pill" href="#pills-answers" role="tab"
+                aria-controls="pills-answers" aria-selected="false">Answers</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-comments-tab" data-toggle="pill" href="#pills-comments" role="tab"
+                aria-controls="pills-comments" aria-selected="false">Comments</a>
+        </li>
+        <!-- <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-email-tab" data-toggle="pill" href="#pills-email" role="tab"
+                aria-controls="pills-email" aria-selected="false">Email</a>
+        </li> -->
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+        <!-- Profile -->
+        <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            {% for msg in messages %}
+            {% if msg.tags == 'success' %}
+            <div class="alert alert-success" role="alert">{{ msg }}</div>
+            {% elif msg.tags == 'error' %}
+            <div class="alert alert-danger" role="alert">{{ msg }}</div>
+            {% endif %}
+            {% endfor %}
+            <div class="card">
+                <div class="custom-card">
+                    <h5 class="card-header">Edit Profile</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ profile_form.non_field_errors }}
+                        <div class="form-group">
+                            {{ profile_form.username.label_tag }}
+                            {{ profile_form.username }}
+                            {{ profile_form.username.errors }}
+                        </div>
+                        <div class="form-group">
+                            {{ profile_form.first_name.label_tag }}
+                            {{ profile_form.first_name }}
+                            {{ profile_form.first_name.errors }}
+                        </div>
+                        <div class="form-group">
+                            {{ profile_form.last_name.label_tag }}
+                            {{ profile_form.last_name }}
+                            {{ profile_form.last_name.errors }}
+                        </div>
+                        <div class="form-group">
+                            {{ profile_form.email.label_tag }}
+                            {{ profile_form.email }}
+                            {{ profile_form.email.errors }}
+                        </div>
+                        <div class="form-group">
+                            {{ profile_form.region.label_tag }}
+                            {{ profile_form.region }}
+                            {{ profile_form.region.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_profile_picture">Profile Picture:</label>
+                            <input type="file" name="profile_picture" id="id_profile_picture" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="profile_form">Update Profile</button>
+                    </form>
+                </div>
+                <div class="mt-4">
+                    <div class="card">
+                        <div class="custom-card">
+                            <h5 class="card-header">Update Password</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ password_form.non_field_errors }}
+                                <div class="form-group">
+                                    <label for="id_old_password">Old Password:</label>
+                                    <input type="password" class="form-control" id="id_old_password" name="old_password"
+                                        required>
+                                    {% for error in password_form.old_password.errors %}
+                                    <div class="invalid-feedback">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_new_password1">New Password:</label>
+                                    <input type="password" class="form-control" id="id_new_password1"
+                                        name="new_password1" required>
+                                    {% for error in password_form.new_password1.errors %}
+                                    <div class="invalid-feedback">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_new_password2">Confirm New Password:</label>
+                                    <input type="password" class="form-control" id="id_new_password2"
+                                        name="new_password2" required>
+                                    {% for error in password_form.new_password2.errors %}
+                                    <div class="invalid-feedback">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                                <button type="submit" class="btn btn-primary" name="password_form">Update
+                                    Password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions -->
+        <div class="tab-pane fade" id="pills-questions" role="tabpanel" aria-labelledby="pills-questions-tab">
+            <div class="card">
+                <div class="custom-card">
+                    <h5 class="card-header">My Questions <span class="badge badge-info">{{ quests.count }}</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% for quest in quests %}
+                    <p><a href="{% url 'detail' id=quest.id %}">{{ quest.issue }}</a></p>
+                    <hr />
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Answers -->
+        <div class="tab-pane fade" id="pills-answers" role="tabpanel" aria-labelledby="pills-answers-tab">
+            <div class="card">
+                <div class="custom-card">
+                    <h5 class="card-header">My Answers <span class="badge badge-info">{{ answers.count }}</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Question</th>
+                            <th>Answer</th>
+                        </tr>
+                        {% for ans in answers %}
+                        <tr>
+                            <td><a href="{% url 'detail' id=ans.id %}">{{ ans.question.issue }}</a></td>
+                            <td><a href="{% url 'detail' id=ans.id %}">{{ ans.solution }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments -->
+        <div class="tab-pane fade" id="pills-comments" role="tabpanel" aria-labelledby="pills-comments-tab">
+            <div class="card">
+                <div class="custom-card">
+                    <h5 class="card-header">My Comments <span class="badge badge-info">{{ comments.count }}</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            <th>Comment</th>
+                        </tr>
+                        {% for comment in comments %}
+                        <tr>
+                            <td><a href="{% url 'detail' id=comment.id %}">{{ comment.answer.question.issue }}</a></td>
+                            <td><a href="{% url 'detail' id=comment.id %}">{{ comment.answer.solution }}</a>
+                            </td>
+                            <td><a href="{% url 'detail' id=comment.id %}">{{ comment.comment }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Email
+        <div class="tab-pane fade" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab">
+            <div class="card">
+                <div class="custom-card">
+                    <h5 class="card-header">Email</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <label for="email">Email Distribution (for notification)</label>
+                        <input type="email" class="form-control" name="email_distribution" value="{{ user.profile.email_distribution }}">
+                        <input type="submit" value="Submit" class="form-control mt-2 bg-primary text-light">
+                    </form>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Upvotes -->
+        <!-- <div class="tab-pane fade" id="pills-upvotes" role="tabpanel" aria-labelledby="pills-upvotes-tab">
+            <div class="card">
+                <div class="custom-card">
+                    <h5 class="card-header">My Upvotes <span class="badge badge-info">{{ upvotes.count }}</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            <th>Votes</th>
+                        </tr>
+                        {% for upvote in upvotes %}
+                        <tr>
+                            <td><a href="/detail/{{ upvote.answer.question.id }}">{{ upvote.answer.question.issue
+                                    }}</a></td>
+                            <td><a href="/detail/{{ upvote.answer.question.id }}">{{ upvote.answer.solution }}</a>
+                            </td>
+                            <td>{{ upvote.value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Downvotes -->
+        <!-- <div class="tab-pane fade" id="pills-downvotes" role="tabpanel" aria-labelledby="pills-downvotes-tab">
+            <div class="card">
+                <div class="custom-card">
+                    <h5 class="card-header">My Downvotes <span class="badge badge-info">{{ downvotes.count }}</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            <th>Votes</th>
+                        </tr>
+                        {% for downvote in downvotes %}
+                        <tr>
+                            <td><a href="/detail/{{ downvote.answer.question.id }}">{{
+                                    downvote.answer.question.issue }}</a></td>
+                            <td><a href="/detail/{{ downvote.answer.question.id }}">{{ downvote.answer.solution
+                                    }}</a></td>
+                            <td>{{ downvote.value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+{% endblock %}

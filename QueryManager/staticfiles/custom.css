@@ -1,0 +1,114 @@
+.profile-picture-small {
+    width: 100px;
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 50%; 
+    overflow: hidden;
+}
+
+.navbar-brand img {
+    max-height: 100%; 
+    width: auto; 
+}
+
+.navbar-custom {
+    background-color: #5AB2FF;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #ffffff;
+}
+
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .nav-link:hover {
+    color: #ffffff;
+}
+
+.custom-card {
+    background-color: #CAF4FF;
+}
+
+.gray-text {
+    color: black;
+}
+
+.custom-button {
+    background-color: #5AB2FF !important;
+    border-color: #5AB2FF !important;
+    color: #ffffff !important;
+}
+
+.custom-button:hover {
+    background-color: #FFF9D0 !important;
+    border-color: #FFF9D0 !important;
+    color: #000000 !important;
+}
+
+.page-item.active .page-link,
+.custom-button.active {
+    background-color: #5AB2FF !important;
+    color: #ffffff !important; /* Change text color when selected */
+}
+
+/* Ensure nav-link text color is black */
+.navbar-nav.ml-auto .nav-link {
+    color: black !important;
+}
+
+/*Query question list*/
+
+.adjustable-text {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1em;
+    max-width: 100%;
+    line-height: 1.2em;
+}
+
+/* Example to simulate long text adjustment based on max-width */
+@media (max-width: 500px) {
+    .adjustable-text {
+        font-size: 0.8em;
+    }
+}
+
+/* Custom card styling */
+.custom-card .card-header h4 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.custom-card .card-header small {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+}
+
+.gray-text {
+    color: #333;
+}
+
+.card-footer a {
+    color: #333;
+    text-decoration: none;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Small footer styling */
+.small-footer {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+}
+
+.separator {
+    margin: 0 5px;
+    color: gray;
+}
+

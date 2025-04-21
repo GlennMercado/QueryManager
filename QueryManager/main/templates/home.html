@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <div class="container-fluid">
+    <div class="row">
+      {% include 'sidebar.html' %}
+      <div class="col-8 offset-3">
+        <div class="container pt-5 mt-5">
+          <div class="container" id="question-container">
+            {% include 'post_query.html' %}
+            {% if no_results %}
+              <h2 class="text-center mt-4 not-found-text">No results found. Please try a different search term.</h2>
+              <img class="not-found" src="{% static 'images/not_found.svg' %}" alt="No results found">
+            {% else %}
+              {% include 'question_list.html' %}
+            {% endif %}
+          </div>
+          {% include 'pagination.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

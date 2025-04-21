@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}{{ tag }}{% endblock %}
+{% block content %}
+    <!-- Question List -->
+    <div class="container" id="question-container">
+        <h4 class="mt-5 pt-5 mr-2 mb-4"><i class="fas fa-tag" style="font-size: 18px;"></i>Tags, #{{ tag }}</h4>
+        {% include 'question_list.html' %}
+        {% include 'pagination.html' %}
+    </div>
+{% endblock %}

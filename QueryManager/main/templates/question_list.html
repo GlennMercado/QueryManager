@@ -1,0 +1,152 @@
+{% load static %}
+{% load custom_filters %}
+{% for quest in quests %}
+  <div class="card shadow-sm mt-3 mb-3">
+    <a href="/QueryManager/detail/{{ quest.id }}" class="text-reset text-decoration-none">
+    <div class="custom-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="{% if quest.user.profile_picture %}{{ quest.user.profile_picture.url }}{% else %}{% static 'profile_pics/default2.jpg' %}{% endif %}" alt="Profile Picture" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 5px;" />
+            {{ quest.user.username }}
+            <!-- {{ quest.user.first_name }} {{ quest.user.last_name }} -->
+          </div>
+          <span class="badge {% if quest.status %}badge-success{% else %}badge-warning{% endif %}">
+            {% if quest.status %}Resolved{% else %}Unresolved{% endif %}
+            <i class="fas {% if quest.status %}fa-check{% else %}fa-exclamation-circle{% endif %}"></i>
+          </span>
+        </div>
+    </div>
+    <!-- Changes 14/2/2025 -->
+    <div class="d-flex align-items-center pt-3 pl-3">
+      <p class="mb-0">Category:</p>
+      <!-- Automated -->
+      {% if quest.category == "HotDocs" %}
+          <img class="logos ml-1" src="{% static 'logos/hd.png' %}">
+      {% elif quest.category == "Document Drafter" %}
+          <img class="logos ml-1" src="{% static 'logos/dd.png' %}">
+      {% endif %}
+      <!-- Automated end -->
+      <!-- Major works -->
+      {% if quest.category == "Formatting" %}
+        <i class="fa-solid fa-align-justify ml-1"></i>
+      {% elif quest.category == "Editing" %}
+        <i class="fa-solid fa-file-pen ml-1"></i>
+      {% elif quest.category == "Conversion" %}
+        <i class="fa-solid fa-right-left ml-1"></i>
+      {% endif %}
+      <!-- Major works end -->
+      <strong class="ml-1">{{ quest.category }}</strong>
+    </div>
+    <!-- Changes 14/2/2025 -->
+    <h3 class="mt-2 mb-0 ml-3">
+      {{ quest.issue }}
+    </h3>
+    </a>    
+    <div class="card-body">
+      <p class="card-text gray-text mb-0">{{ quest.detail|truncatechars:100|linebreaksbr }}</p>
+      <div class="row">
+        {% for attachment in quest.attachments_reversed %}
+          {% if not attachment.is_image %}
+            <div class="col-12">
+              <a href="{{ attachment.file.url }}" class="d-block mb-2">Download {{ attachment.file.name }}</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+        {% for attachment in quest.attachments_reversed %}
+        {% if attachment.is_image %}
+          {% if forloop.counter <= 3 %}
+            <a href="{{ attachment.file.url }}" class="glightbox" data-glightbox="gallery{{ quest.id }}">
+              <img src="{{ attachment.file.url }}" alt="Image Attachment" class="img-fluid m-1" style="height: 200px; width: 300px;">
+            </a>
+          {% elif forloop.counter == 4 %}
+            <a href="{{ attachment.file.url }}" class="glightbox" data-glightbox="gallery{{ quest.id }}">
+              <div class="position-relative">
+                <img src="{{ attachment.file.url }}" alt="Image Attachment" class="img-fluid m-1" style="height: 200px; width: 300px; filter: brightness(50%);">
+                <div class="position-absolute d-flex justify-content-center align-items-center" style="top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; color: white;">
+                  +{{ quest.attachments_reversed|count_images|add:"-3" }}
+                </div>
+              </div>
+            </a>
+          {% else %}
+            <a href="{{ attachment.file.url }}" class="glightbox" data-glightbox="gallery{{ quest.id }}" style="display: none;">
+              <img src="{{ attachment.file.url }}" alt="Image Attachment" class="img-fluid m-1" style="height: 200px; max-width: 300px;">
+            </a>
+          {% endif %}
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="ml-2 mb-2">
+      <span class="ml-2" style="font-size: 15px;">Tags: </span>
+      {% for tag in quest.tags.all %}
+        <span class="badge badge-info p-2 m-1">
+          <a href="{% url 'tag' tag.name %}" class="text-light text-reset text-decoration-none">
+            <i class="fas fa-tag"></i>
+            {{ tag.name }}
+          </a>
+        </span>
+      {% empty %}
+        <span class="text-muted">No tags</span>
+      {% endfor %}
+    </div>
+    <!-- Changes 24/2/25 -->
+    {% if quest.referenceform %}
+    <div class="ml-2 mb-2">
+      <span class="ml-2" style="font-size: 15px;">Reference Form: {{ quest.referenceform }}</span>
+    </div>
+    {% endif %}
+    <div class="card-footer small-footer">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <a href="/QueryManager/detail/{{ quest.id }}" class="mr-2 gray-text">{{ quest.answer_set.count }} <i class="fa-regular fa-comment"></i> Answers</a>
+          {% if quest.total_comments > 0 %}
+          <a href="/QueryManager/detail/{{ quest.id }}" class="mr-2 gray-text">{{ quest.total_comments }} <i class="fa-regular fa-comments"></i> Comments</a>
+          {% endif %}
+        </div>
+        <span class="text-muted">{{ quest.add_time }}</span>
+      </div>
+      <!-- First Answer Preview -->
+      {% with quest.answer_set.first as first_answer %}
+      {% if first_answer %}
+        <div class="mt-4 p-4 {% if first_answer.mark_solution %}m-solution{% endif %}">
+          {% if first_answer.mark_solution %}
+          <div style="position: absolute; left: 2%; top: 0; transform: translateY(-50%); background: linear-gradient(81deg, #2acd5e 0%, #2ecea9 94.216%, #3cded3 100%, #28ba60 100%); padding: 4px 8px; border-radius: 4px; color: white; font-size: 0.9rem; font-weight: bold;">
+              Solution <i class="fa-solid fa-check-double"></i>
+          </div>
+          {% endif %}
+          <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center w-100">
+                  <!-- Profile Picture -->
+                  {% if first_answer.user.profile_picture %}
+                      <img src="{{ first_answer.user.profile_picture.url }}" alt="{{ first_answer.user.username }}" class="rounded-circle answer-profile" style="width: 30px; height: 30px;">
+                  {% else %}
+                      <img src="{% static 'profile_pics/default2.jpg' %}" alt="Profile Picture" class="rounded-circle answer-profile" style="width: 30px; height: 30px;">
+                  {% endif %}     
+                  <!-- Username and Date -->
+                  <div class="d-flex flex-column ms-2">
+                      <a class="text-decoration-none text-dark" href="#" style="font-size: 0.9rem;">{{ first_answer.user.username }}</a>
+                      <span class="text-muted" style="font-size: 0.8rem;">{{ first_answer.add_time|date:'m/d/Y h:i:s' }}</span>
+                  </div>
+              </div>
+          </div>
+          <p class="mt-2 mb-2" style="font-size: 0.9rem;">{{ first_answer.solution|truncatechars:150 }}</p>
+          
+          <!-- Show first image attachment if exists -->
+          {% with first_answer.attachments.all|first as first_attachment %}
+            {% if first_attachment and first_attachment.is_image %}
+              <a href="{{ first_attachment.file.url }}" class="glightbox" data-glightbox="gallery{{ first_answer.id }}">
+                <img src="{{ first_attachment.file.url }}" alt="Image Attachment" class="img-fluid" style="max-height: 100px;">
+              </a>
+            {% endif %}
+          {% endwith %}
+          
+          <div class="text-left">
+            <a href="/QueryManager/detail/{{ quest.id }}#answer-{{ first_answer.id }}" style="text-decoration: underline;">View Full Answer</a>
+          </div>
+        </div>
+      {% endif %}
+    {% endwith %}
+    </div>
+    <!-- Changes end -->
+  </div>
+{% endfor %}

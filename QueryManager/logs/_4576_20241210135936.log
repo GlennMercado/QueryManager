@@ -1,0 +1,10 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 10, 2024 - 08:59:38
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:7534/
+Quit the server with CTRL-BREAK.
+
+[10/Dec/2024 08:59:38] "GET /QueryManager/ HTTP/1.1" 200 14637
+[10/Dec/2024 08:59:45] "GET /QueryManager/?page=10 HTTP/1.1" 200 14377

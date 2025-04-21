@@ -1,0 +1,24 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 20, 2024 - 08:27:27
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:27172/
+Quit the server with CTRL-BREAK.
+
+[20/Nov/2024 08:27:27] "GET /QueryManager/ HTTP/1.1" 200 12882
+[20/Nov/2024 08:27:27] "GET /QueryManager/static/bootstrap.min.css HTTP/1.1" 200 160302
+[20/Nov/2024 08:27:27] "GET /QueryManager/static/custom.css HTTP/1.1" 200 1925
+[20/Nov/2024 08:27:27] "GET /QueryManager/static/profile_pics/default2.jpg HTTP/1.1" 200 10687
+[20/Nov/2024 08:27:27] "GET /QueryManager/static/query_manager.png HTTP/1.1" 200 64648
+[20/Nov/2024 08:27:27] "GET /QueryManager/media/profile_pics/ironman.jfif HTTP/1.1" 200 9789
+[20/Nov/2024 08:27:34] "GET /QueryManager/ HTTP/1.1" 200 12882
+[20/Nov/2024 08:27:35] "GET /QueryManager/accounts/login HTTP/1.1" 301 0
+[20/Nov/2024 08:27:35] "GET /QueryManager/accounts/login/ HTTP/1.1" 200 4879
+[20/Nov/2024 08:27:36] "GET /QueryManager/static/animate.min.css HTTP/1.1" 200 71750
+[20/Nov/2024 08:27:36] "GET /QueryManager/static/fa4/css/font-awesome.min.css HTTP/1.1" 200 31000
+[20/Nov/2024 08:27:36] "GET /QueryManager/static/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+[20/Nov/2024 08:27:36] "GET /QueryManager/static/bootstrap.min.js HTTP/1.1" 200 51039
+[20/Nov/2024 08:27:38] "GET /QueryManager/accounts/register HTTP/1.1" 301 0
+[20/Nov/2024 08:27:38] "GET /QueryManager/accounts/register/ HTTP/1.1" 200 5372
+[20/Nov/2024 08:27:41] "GET /QueryManager/ HTTP/1.1" 200 12882

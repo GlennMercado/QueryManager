@@ -1,0 +1,19 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 20, 2024 - 06:02:48
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:31601/
+Quit the server with CTRL-BREAK.
+
+[20/Nov/2024 06:02:48] "GET /QueryManager/ HTTP/1.1" 200 12882
+[20/Nov/2024 06:05:47] "GET /QueryManager/ HTTP/1.1" 200 12882
+[20/Nov/2024 06:05:51] "GET /QueryManager/admin/ HTTP/1.1" 302 0
+[20/Nov/2024 06:05:51] "GET /QueryManager/admin/login/?next=/QueryManager/admin/ HTTP/1.1" 200 4324
+[20/Nov/2024 06:05:51] "GET /QueryManager/static/admin/css/responsive.css HTTP/1.1" 304 0
+[20/Nov/2024 06:05:51] "GET /QueryManager/static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[20/Nov/2024 06:05:51] "GET /QueryManager/static/admin/css/base.css HTTP/1.1" 304 0
+[20/Nov/2024 06:05:51] "GET /QueryManager/static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[20/Nov/2024 06:05:51] "GET /QueryManager/static/admin/css/login.css HTTP/1.1" 304 0
+[20/Nov/2024 06:05:51] "GET /QueryManager/static/admin/js/theme.js HTTP/1.1" 304 0
+[20/Nov/2024 06:05:51] "GET /QueryManager/static/admin/js/nav_sidebar.js HTTP/1.1" 304 0

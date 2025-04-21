@@ -1,0 +1,15 @@
+24/2/25 updates
+
+
+models.py - migrate
+edit_url.html
+urls.py
+views.py
+forms.py
+detail.html
+custom.css
+customscript.js
+questionlist.html
+edit-query.html
+
+*comment out the category in majorworks*

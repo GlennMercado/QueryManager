@@ -1,0 +1,83 @@
+{% load static %}
+{% if user.is_authenticated %}
+  <a class="text-reset text-decoration-none" href="#" data-toggle="modal" data-target="#ModalScrollable">
+    <div class="card shadow-sm">
+      <div class="card-body d-flex align-items-center">
+        <img
+          src="{% if user.profile_picture %}{{ user.profile_picture.url }}{% else %}{% static 'profile_pics/default2.jpg' %}{% endif %}"
+          alt="Profile Picture" class="rounded-circle"
+          style="width: 35px; height: 35px; margin-right: 10px;" />
+        <span class="d-block border rounded p-2 w-100"><i class="fa-regular fa-pen-to-square"></i> Post your query, {{ user.get_username }}</span>
+      </div>
+    </div>
+  </a>
+{% else %}
+  <a class="text-reset text-decoration-none" href="/QueryManager/accounts/login">
+    <div class="card shadow-sm d-flex" style="background-color: #E5E8E9; height: 80px;">
+      <p class="m-4">Login to post your query.</p>
+    </div>
+  </a>
+{% endif %}
+
+<!-- Modal -->
+<div class="modal fade" id="ModalScrollable" tabindex="-1" role="dialog" aria-labelledby="ModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalScrollableTitle"><i class="fa-regular fa-pen-to-square"></i> Post your query, {{ user.get_username }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="q-form-group form-group">
+            <label for="id_attachment">Attachment</label>
+            <input type="file" class="form-control-file" id="id_attachment" name="attachments" multiple>
+          </div>
+          <!-- Changes 18/2/25 -->
+          <div class="q-form-group form-group">
+            <label for="id_category">Category*</label>
+            <select name="category" class="form-control" id="id_category" required>
+              <!-- Automated only -->
+              <option value="HotDocs">HotDocs</option>
+              <option value="Document Drafter">Document Drafter</option>
+              <!-- Automated end -->
+              <!-- Major works only 16/4/25 -->
+              <option value="Formatting">Formatting</option>
+              <option value="Editing">Editing</option>
+              <option value="Conversion">Conversion</option>
+              <!-- Major works -->
+            </select>
+          </div>
+          <div class="q-form-group form-group">
+            <label for="id_tags">Tags
+                <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" title="This will be served as a keyword"></i>
+            </label>
+            <input type="text" id="id_tags_input" class="form-control" placeholder="Add tags and press Enter or use a comma" onkeyup="showTagSuggestions(this.value)">
+            <div id="tag-suggestions" class="suggestions-box"></div>
+            <div id="tags-container" class="mt-2"></div>
+            <input type="hidden" id="id_tags" name="tags">
+          </div>
+          <!-- Changes end -->
+          <div class="q-form-group form-group">
+            <label for="id_issue">Issue*</label>
+            <input type="text" class="form-control" id="id_issue" name="issue"
+              value="{{ form.issue.value|default_if_none:'' }}" placeholder="This will serve as a title" required>
+          </div>
+          <div class="q-form-group form-group">
+            <label for="id_detail">Detail</label>
+            <textarea class="form-control" id="id_detail" name="detail" rows="4">{{ form.detail.value|default_if_none:'' }}</textarea>
+          </div>
+          <div class="q-form-group form-group">
+            <label for="id_referenceform">Reference Form*</label>
+            <input type="text" class="form-control" id="id_referenceform" name="referenceform"
+              value="{{ form.referenceform.value|default_if_none:'' }}" placeholder="e.g., LIT_123456" required>
+          </div>
+        </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary w-100">Post</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

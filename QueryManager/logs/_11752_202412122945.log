@@ -1,0 +1,31 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 11, 2024 - 21:09:46
+Django version 4.2.16, using settings 'core.settings'
+Starting development server at http://127.0.0.1:6758/
+Quit the server with CTRL-BREAK.
+
+[11/Dec/2024 21:09:47] "GET /QueryManager/ HTTP/1.1" 200 14953
+[11/Dec/2024 21:24:33] "GET /QueryManager/detail/65 HTTP/1.1" 301 0
+[11/Dec/2024 21:24:34] "GET /QueryManager/detail/65/ HTTP/1.1" 200 8992
+[11/Dec/2024 21:24:46] "GET /QueryManager/tags HTTP/1.1" 301 0
+[11/Dec/2024 21:24:47] "GET /QueryManager/tags/ HTTP/1.1" 200 76959
+[11/Dec/2024 21:24:54] "GET /QueryManager/ HTTP/1.1" 200 14953
+[11/Dec/2024 21:24:56] "GET /QueryManager/detail/67 HTTP/1.1" 301 0
+[11/Dec/2024 21:24:57] "GET /QueryManager/detail/67/ HTTP/1.1" 200 9423
+[11/Dec/2024 21:25:01] "GET /QueryManager/accounts/login/ HTTP/1.1" 200 4925
+[11/Dec/2024 21:25:08] "POST /QueryManager/accounts/login/ HTTP/1.1" 302 0
+[11/Dec/2024 21:25:08] "GET /QueryManager/ HTTP/1.1" 200 15678
+[11/Dec/2024 21:25:11] "GET /QueryManager/detail/67/ HTTP/1.1" 200 11506
+[11/Dec/2024 21:25:15] "GET /QueryManager/ HTTP/1.1" 200 15678
+[11/Dec/2024 21:25:19] "GET /QueryManager/ask-question HTTP/1.1" 200 6733
+[11/Dec/2024 21:25:44] "POST /QueryManager/ask-question HTTP/1.1" 302 0
+[11/Dec/2024 21:25:45] "GET /QueryManager/ask-question HTTP/1.1" 200 6849
+[11/Dec/2024 21:25:47] "GET /QueryManager/ HTTP/1.1" 200 15451
+[11/Dec/2024 21:25:53] "GET /QueryManager/tags/ HTTP/1.1" 200 80000
+[11/Dec/2024 21:26:06] "GET /QueryManager/ HTTP/1.1" 200 15451
+[11/Dec/2024 21:26:09] "GET /QueryManager/detail/68 HTTP/1.1" 301 0
+[11/Dec/2024 21:26:09] "GET /QueryManager/detail/68/ HTTP/1.1" 200 11467
+[11/Dec/2024 21:26:20] "POST /QueryManager/delete-question/68/ HTTP/1.1" 302 0
+[11/Dec/2024 21:26:20] "GET /QueryManager/ HTTP/1.1" 200 15678

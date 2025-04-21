@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Help{% endblock %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <h1>Login and Register</h1>
+    <div class="m-3">
+        <h6 class="mt-4">Users can view a preview of the posts on the website; however, to perform actions such as posting, answering queries, or leaving comments, they will be required to log in.</h6>
+        <a href="{% static 'QmanTutorial/Picture1.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture1.png' %}" >
+        </a>
+        <h6 class="mt-4">The website will require the following fields for user registration:</h6>
+        <a href="{% static 'QmanTutorial/Picture2.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture2.png' %}" >
+        </a>
+    </div>
+    <h1 class="mt-5">Tags and Status filter</h1>
+    <div class="m-3">
+        <h6 class="mt-4">In the sidebar, there is a button labeled 'Tags', where you can find a complete list of all available tags.</h6>
+        <a href="{% static 'QmanTutorial/Picture3.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture3.png' %}" >
+        </a>
+        <a href="{% static 'QmanTutorial/Picture4.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture4.png' %}" >
+        </a>
+        <h6 class="mt-4">There is a section labeled 'Status' that allows you to filter posts based on their status. You can choose to display only 'Resolved', 'Unresolved', or All posts.</h6>
+        <a href="{% static 'QmanTutorial/Picture5.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture5.png' %}" >
+        </a>
+        <h6 class="mt-3">
+            When the 'Resolved' filter is applied, the section will display only posts that have been marked as resolved. For example:
+        </h6>
+        <ul>
+            <li>
+                <h6>
+                    Posts where the issues have been successfully addressed or solutions have been provided.
+                </h6>
+            </li>
+            <li>
+                <h6>
+                    Entries with a clear indication of being marked as resolved by the original poster or an administrator.
+                </h6>
+            </li>           
+        </ul>
+        <h6>
+            This filter helps users focus on solutions that are already available.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture6.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture6.png' %}" >
+        </a>
+        <h6 class="mt-3">
+            When the 'Unresolved' filter is applied, the section will display only posts that have not yet been resolved. For example:
+        </h6>
+        <ul>
+            <li>
+                <h6>
+                    Posts where the issue or query is still open and awaiting a solution.
+                </h6>
+            </li>
+            <li>
+                <h6>
+                    Entries that have not been marked as resolved by the original poster or an administrator.
+                </h6>
+            </li>           
+        </ul>
+        <h6>
+            This filter is useful for identifying discussions or problems that require further input or assistance.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture7.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture7.png' %}" >
+        </a>
+    </div>
+    <h1 class="mt-5">Post</h1>
+    <div class="m-3">
+        <h6 class="mt-4">
+            When you click on the 'Post Your Query' text box, a form will appear with the following fields:
+        </h6>
+        <ul>
+            <li>
+                <h6>
+                    Attachment: Allows you to upload relevant files or documents.
+                </h6>              
+            </li>
+            <li>
+                <h6>
+                    Issue: A concise title or summary of the problem or question.
+                </h6>
+            </li>
+            <li>
+                <h6>
+                    Detail: A detailed description of the query, including any necessary context or background information.
+                </h6>
+            </li>
+            <li>
+                <h6>
+                    Reference Form: Optional references or sources related to the query.
+                </h6>
+            </li>
+            <li>
+                <h6>
+                    Tags: Keywords or categories to help classify the query for better visibility and organization.
+                </h6>
+            </li>
+        </ul>
+        <h6>
+            These fields are designed to ensure that your query is well-structured and easy for others to understand and respond to.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture8.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture8.png' %}" >
+        </a>
+        <a href="{% static 'QmanTutorial/Picture9.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture9.png' %}" >
+        </a>
+        <h6>
+            In the 'Tags' section, you can input as many tags as necessary, provided they are relevant to the post. Tags help categorize the content and make it easier for others to discover and engage with your post.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture10.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture10.png' %}" >
+        </a>
+        <h6>
+            Example post:
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture11.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture11.png' %}" >
+        </a>
+        <h6>
+            In the Attachment section, you can upload as many images and files as necessary to support your query.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture12.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture12.png' %}" >
+        </a>
+        <h6>
+            Example post with files and images:
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture13.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture13.png' %}" >
+        </a>      
+    </div>
+    <h1 class="mt-5">Detail view</h1>
+    <div class="m-3">
+        <h6 class="mt-4">
+            Click the post header to view its details.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture14.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture14.png' %}" >
+        </a>
+        <a href="{% static 'QmanTutorial/Picture15.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture15.png' %}" >
+        </a>
+    </div>
+    <h1 class="mt-5">Updating the status</h1>
+    <div class="m-3">
+        <h6 class="mt-4">
+            In the detail view hover over the status badge to update it.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture16.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture16.png' %}" >
+        </a>
+    </div>
+    <h1 class="mt-5">Images</h1>
+    <div class="m-3">
+        <h6 class="mt-4">
+            Click the left and right arrows on the image to browse through the images. Alternatively, you can click the indicator to select an image.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture17.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture17.png' %}" >
+        </a>
+        <h6>
+            Click the image to view it in full screen.
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture18.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial" src="{% static 'QmanTutorial/Picture18.png' %}" >
+        </a>
+    </div>
+    <h1 class="mt-5">Attachment</h1>
+    <div class="m-3">
+        <h6 class="mt-4">
+            Click the attachment to download it
+        </h6>
+        <a href="{% static 'QmanTutorial/Picture19.png' %}" class="glightbox" data-glightbox="gallery">
+            <img class="tutorial mb-5" src="{% static 'QmanTutorial/Picture19.png' %}" >
+        </a>
+    </div>
+</div>
+{% endblock %}
