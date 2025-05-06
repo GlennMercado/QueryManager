@@ -124,9 +124,9 @@ USE_TZ = True
 STATIC_URL = '/QueryManager/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-
+LOGIN_URL = '/QueryManager/accounts/login/'
 LOGIN_REDIRECT_URL ='/QueryManager/'
-LOGOUT_REDIRECT_URL = 'QueryManager/login'
+LOGOUT_REDIRECT_URL = '/QueryManager/accounts/login/'
 
 MEDIA_URL = '/QueryManager/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

@@ -4,7 +4,11 @@ from django.contrib import admin
 from django.conf.urls.static import static
 #from django.contrib.auth import views as auth_views
 from . import views
-from .views import home, search_suggestions, tag_suggestions, edit_query, mark_as_solution, edit_answer, remove_attachment, edit_comment, remove_comment_attachment,remove_question_attachment
+from .views import (
+    home, search_suggestions, tag_suggestions, edit_query,
+    mark_as_solution, edit_answer, remove_attachment,
+    edit_comment, remove_comment_attachment, remove_question_attachment
+)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),

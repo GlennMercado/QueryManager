@@ -21,7 +21,7 @@ from django.urls import reverse
 # Logout
 def custom_logout(request):
     logout(request)
-    return redirect('home') 
+    return redirect(settings.LOGIN_URL)
 # Question Filter
 def get_filtered_questions(q, status_filter, tag_filter, category_filter):
     """Helper function to filter questions based on search and filters."""
@@ -128,6 +128,7 @@ def send_notification_email(question):
     email.attach_alternative(html_message, "text/html")
     email.send()
 
+@login_required
 def home(request):
     # Get search and filters
     q = request.GET.get('q', '').strip()
