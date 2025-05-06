@@ -60,18 +60,18 @@
                     </div>
                     
                     <div class="q-form-group form-group">
-                    <label for="id_category">Category*</label>
-                    <select name="category" class="form-control" id="id_category" required>
-                        <!-- Automated only 16/4/25 -->
-                        <option value="HotDocs" {% if quest.category == "HotDocs" %}selected{% endif %}>HotDocs</option>
-                        <option value="Document Drafter" {% if quest.category == "Document Drafter" %}selected{% endif %}>Document Drafter</option>
-                        <!-- Automated end -->
-                        <!-- Major works only 16/4/25 -->
-                        <option value="Formatting" {% if quest.category == "Formatting" %}selected{% endif %}>Formatting</option>
-                        <option value="Editing" {% if quest.category == "Editing" %}selected{% endif %}>Editing</option>
-                        <option value="Conversion" {% if quest.category == "Conversion" %}selected{% endif %}>Conversion</option>
-                        <!-- Major works end -->
-                    </select>
+                        <label for="id_category">Category*</label>
+                        <select name="category" class="form-control" id="id_category" required>
+                            <!-- Automated only 16/4/25 -->
+                            <option value="HotDocs" {% if quest.category == "HotDocs" %}selected{% endif %}>HotDocs</option>
+                            <option value="Document Drafter" {% if quest.category == "Document Drafter" %}selected{% endif %}>Document Drafter</option>
+                            <!-- Automated end -->
+                            <!-- Major works only 16/4/25 -->
+                            <option value="Formatting" {% if quest.category == "Formatting" %}selected{% endif %}>Formatting</option>
+                            <option value="Editing" {% if quest.category == "Editing" %}selected{% endif %}>Editing</option>
+                            <option value="Conversion" {% if quest.category == "Conversion" %}selected{% endif %}>Conversion</option>
+                            <!-- Major works end -->
+                        </select>
                     </div>
                     <div class="q-form-group form-group">
                         <label for="id_tags">Tags

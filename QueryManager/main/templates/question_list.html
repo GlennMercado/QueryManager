@@ -3,19 +3,22 @@
 {% for quest in quests %}
   <div class="card shadow-sm mt-3 mb-3">
     <a href="/QueryManager/detail/{{ quest.id }}" class="text-reset text-decoration-none">
-    <div class="custom-card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <div class="d-flex align-items-center">
-            <img src="{% if quest.user.profile_picture %}{{ quest.user.profile_picture.url }}{% else %}{% static 'profile_pics/default2.jpg' %}{% endif %}" alt="Profile Picture" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 5px;" />
-            {{ quest.user.username }}
-            <!-- {{ quest.user.first_name }} {{ quest.user.last_name }} -->
+      <div class="m-3 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <img src="{% if quest.user.profile_picture %}{{ quest.user.profile_picture.url }}{% else %}{% static 'profile_pics/default2.jpg' %}{% endif %}" 
+               alt="Profile Picture" 
+               class="rounded-circle" 
+               style="width: 35px; height: 35px; margin-right: 10px;" />  
+          <div class="d-flex flex-column">
+            <strong>{{ quest.user.username }}</strong>
+            <small class="text-muted">{{ quest.add_time }}</small>
           </div>
-          <span class="badge {% if quest.status %}badge-success{% else %}badge-warning{% endif %}">
-            {% if quest.status %}Resolved{% else %}Unresolved{% endif %}
-            <i class="fas {% if quest.status %}fa-check{% else %}fa-exclamation-circle{% endif %}"></i>
-          </span>
-        </div>
-    </div>
+        </div>  
+        <span class="badge {% if quest.status %}badge-success{% else %}badge-warning{% endif %}">
+          {% if quest.status %}Resolved{% else %}Unresolved{% endif %}
+          <i class="fas {% if quest.status %}fa-check{% else %}fa-exclamation-circle{% endif %}"></i>
+        </span>
+      </div>
     <!-- Changes 14/2/2025 -->
     <div class="d-flex align-items-center pt-3 pl-3">
       <p class="mb-0">Category:</p>
@@ -103,7 +106,6 @@
           <a href="/QueryManager/detail/{{ quest.id }}" class="mr-2 gray-text">{{ quest.total_comments }} <i class="fa-regular fa-comments"></i> Comments</a>
           {% endif %}
         </div>
-        <span class="text-muted">{{ quest.add_time }}</span>
       </div>
       <!-- First Answer Preview -->
       {% with quest.answer_set.first as first_answer %}

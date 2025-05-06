@@ -1,0 +1,6 @@
+{% load static %}
+{% if quest.user.first_name or quest.user.last_name %}
+{{ quest.user.first_name }} {{ quest.user.last_name }}
+{% else %}
+{{ quest.user.username }}
+{% endif %}
